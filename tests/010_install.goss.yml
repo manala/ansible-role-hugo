@@ -5,6 +5,10 @@ package:
     installed: true
 
 command:
+  dpkg -s hugo:
+    exit-status: 0
+    stdout:
+      - "/^Version: .+-manala\\d+~{{.Env.RELEASE}}\\d+$/"
   hugo version:
     exit-status: 0
     stdout:
